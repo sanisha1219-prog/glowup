@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlowNest Beauty Care | Home Beauty Services – Bagdogra</title>
+  <meta name="description" content="Professional beauty services at your home in Bagdogra. Hair cut, makeup, facial, waxing, spa & special Puja offers. Hygienic & affordable.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #e91e8c;
+      --pink-light: #fce4f0;
+      --gold: #d4a017;
+      --gold-light: #f8e9c0;
+      --purple: #7b2cbf;
+      --dark: #2d1b3d;
+      --text: #3d2b4a;
+      --bg: #fff9fc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, .logo {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #fff0f7 0%, #fce4f0 50%, #fff8e7 100%);
+      padding: 1.2rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 15px rgba(233, 30, 140, 0.12);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      color: var(--pink);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 0.75rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      color: var(--purple);
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+    }
+
+    .call-btn {
+      background: linear-gradient(135deg, var(--pink), #c2185b);
+      color: white !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(233, 30, 140, 0.35);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, #fff0f7 0%, #fce4f0 40%, #fff8e7 100%);
+      padding: 3.5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(212, 160, 23, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--pink);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.15rem;
+      color: var(--purple);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .hero-features {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .hero-features span {
+      background: white;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      color: var(--dark);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--pink), #c2185b);
+      color: white;
+      box-shadow: 0 6px 20px rgba(233, 30, 140, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(233, 30, 140, 0.5);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--pink);
+      border: 2px solid var(--pink);
+    }
+
+    .btn-secondary:hover {
+      background: var(--pink-light);
+    }
+
+    /* Special Offers */
+    .offers {
+      max-width: 1100px;
+      margin: -2rem auto 0;
+      padding: 0 1.5rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--dark);
+      margin-bottom: 1.8rem;
+    }
+
+    .section-title span {
+      color: var(--pink);
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .offer-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 10px 30px rgba(233, 30, 140, 0.12);
+      border: 2px solid transparent;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+    }
+
+    .offer-card::before {
+      content: '💎';
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 1.4rem;
+    }
+
+    .offer-card h3 {
+      font-size: 1.15rem;
+      color: var(--pink);
+      margin-bottom: 0.3rem;
+    }
+
+    .offer-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .offer-card p {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    /* Services */
+    .services {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .services-intro {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #666;
+    }
+
+    .category {
+      background: white;
+      border-radius: 16px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .category-header {
+      background: linear-gradient(90deg, var(--pink-light), #fff);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .category-header h3 {
+      font-size: 1.2rem;
+      color: var(--dark);
+      flex: 1;
+    }
+
+    .category-header .icon {
+      font-size: 1.4rem;
+    }
+
+    .category-header .toggle {
+      font-size: 1.2rem;
+      color: var(--pink);
+      transition: transform 0.3s;
+    }
+
+    .category.open .toggle {
+      transform: rotate(180deg);
+    }
+
+    .category-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .category.open .category-body {
+      max-height: 2000px;
+    }
+
+    .service-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .service-table td {
+      padding: 0.7rem 1.4rem;
+      border-bottom: 1px solid #f5e6ef;
+      font-size: 0.95rem;
+    }
+
+    .service-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .service-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: var(--pink);
+      white-space: nowrap;
+    }
+
+    /* Contact */
+    .contact {
+      background: linear-gradient(135deg, #2d1b3d 0%, #4a2c6a 100%);
+      color: white;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact p {
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      min-width: 220px;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-item a {
+      color: #ffd54f;
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .contact .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #b8860b);
+      box-shadow: 0 6px 20px rgba(212, 160, 23, 0.4);
+    }
+
+    footer {
+      background: #1a0f24;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: #ffb6d9;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav {
+        justify-content: center;
+      }
+      .service-table td {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+      }
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        🌸 GLOWNEST
+        <span>BEAUTY CARE</span>
+      </div>
+      <nav>
+        <a href="#offers">Offers</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:6295395734" class="call-btn">📞 Call Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>GlowNest Beauty Care</h1>
+    <p class="tagline">Professional Beauty Services • At Your Home</p>
+    <div class="hero-features">
+      <span>✨ Hygienic</span>
+      <span>🏠 Home Service</span>
+      <span>💰 Affordable</span>
+      <span>🌸 Quality Care</span>
+    </div>
+    <div class="cta-row">
+      <a href="tel:6295395734" class="btn btn-primary">Book Appointment</a>
+      <a href="#offers" class="btn btn-secondary">View Special Offers</a>
+    </div>
+  </section>
+
+  <!-- Special Offers -->
+  <section class="offers" id="offers">
+    <h2 class="section-title">✨ Special <span>Offers</span></h2>
+    <div class="offers-grid">
+      <div class="offer-card">
+        <h3>OFFER 1</h3>
+        <div class="offer-price">₹1799</div>
+        <p>Facial + Gold + Threading + Hand & Leg Wax + V-U Hair Cut</p>
+      </div>
+      <div class="offer-card">
+        <h3>OFFER 2</h3>
+        <div class="offer-price">₹1799</div>
+        <p>Hair Highlight + Face Massage + Threading + D-Tan</p>
+      </div>
+      <div class="offer-card">
+        <h3>OFFER 3</h3>
+        <div class="offer-price">₹799</div>
+        <p>Manicure + Pedicure + Threading</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <h2 class="section-title">Our <span>Services</span> & Rates</h2>
+    <p class="services-intro">All services available at your home in Bagdogra • Airport More area</p>
+
+    <!-- Hair Cut -->
+    <div class="category open">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <span class="icon">✂️</span>
+        <h3>Hair Cut</h3>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="category-body">
+        <table class="service-table">
+          <tr><td>1. Straight Cut</td><td>₹80</td></tr>
+          <tr><td>2. U.V Cut</td><td>₹100</td></tr>
+          <tr><td>3. Step Cut, Layer Cut</td><td>₹230</td></tr>
+          <tr><td>4. Blunt Cut</td><td>₹80</td></tr>
+          <tr><td>5. Mushroom Cut</td><td>₹80</td></tr>
+          <tr><td>6. Feather Cut</td><td>₹180</td></tr>
+          <tr><td>7. Reverse Graduation Cut</td><td>₹230</td></tr>
+          <tr><td>8. Natural Graduation Cut</td><td>₹180</td></tr>
+          <tr><td>9. Multi-Layer Cut</td><td>₹230</td></tr>
+          <tr><td>10. Square Layer Cut</td><td>₹200</td></tr>
+          <tr><td>11. Needle Slice Cut</td><td>₹230</td></tr>
+          <tr><td>12. Bob Slice Cut</td><td>₹230</td></tr>
+          <tr><td>13. Diamond Cut</td><td>₹160</td></tr>
+          <tr><td>14. Bob Cut</td><td>₹180</td></tr>
+          <tr><td>15. Graduated Cut</td><td>₹230</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Make-up -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <span class="icon">💄</span>
+        <h3>Make-up</h3>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="category-body">
+        <table class="service-table">
+          <tr><td>1. Normal Day Make-up (Light)</td><td>₹450</td></tr>
+          <tr><td>2. Evening/Party Make-up</td><td>₹650</td></tr>
+          <tr><td>3. Hair Styling Normal</td><td>₹100</td></tr>
+          <tr><td>4. Saree Draping</td><td>₹100</td></tr>
+          <tr><td>5. Hair Straightening (Temporary)</td><td>₹200</td></tr>
+          <tr><td>6. Hair Curling (Temporary)</td><td>₹200</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bleach -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <span class="icon">🌿</span>
+        <h3>Bleach</h3>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="category-body">
+        <table class="service-table">
+          <tr><td>1. Fruit Bleach VLCC</td><td>₹100</td></tr>
+          <tr><td>2. Olivia Bleach</td><td>₹100</td></tr>
+          <tr><td>3. Oxy Bleach</td><td>₹130</td></tr>
+          <tr><td>4. Oxy Bleach Dabur</td><td>₹130</td></tr>
+          <tr><td>5. Oxy Bleach VLCC</td><td>₹130</td></tr>
+          <tr><td>6. Gold Bleach</td><td>₹160</td></tr>
+          <tr><td>7. Diamond Bleach</td><td>₹160</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Threading -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <span class="icon">🧵</span>
+        <h3>Threading</h3>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="category-body">
+        <table class="service-table">
+          <tr><td>1. Threading</td><td>₹30</td></tr>
+          <tr><td>2. Upper Lips</td><td>₹10</td></tr>
+          <tr><td>3. Forehead</td><td>₹10</td></tr>
+          <tr><td>4. Chin</td><td>₹10</td></tr>
+          <tr><td>5. Full Face Threading</td><td>₹50</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Facials -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <span class="icon">💆‍♀️</span>
+        <h3>Facials</h3>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="category-body">
+        <table class="service-table">
+          <tr><td>1. D-Tan</td><td>₹300</td></tr>
+          <tr><td>2. Normal Clean-up</td><td>₹200</td></tr>
+          <tr><td>3. Papaya Facial VLCC</td><td>₹350</td></tr>
+          <tr><td>4. Papaya Facial AROMA</td><td>₹350</td></tr>
+          <tr><td>5. Mix Fruit Facial Max Glow AROMA</td><td>₹350</td></tr>
+          <tr><td>6. VLCC Skin Whiting & Tightening</td><td>₹450</td></tr>
+          <tr><td>7. LOTUS Skin Whiting & Tightening</td><td>₹500</td></tr>
+          <tr><td>8. VLCC Insta Glow Facial</td><td>₹550</td></tr>
+          <tr><td>9. LOTUS Insta Glow Facial</td><td>₹600</td></tr>
+          <tr><td>10. GOLD Facial VLCC</td><td>₹650</td></tr>
+          <tr><td>11. GOLD Facial LOTUS</td><td>₹750</td></tr>
+          <tr><td>12. Diamond Facial VLCC</td><td>₹750</td></tr>
+          <tr><td>13. Diamond Facial LOTUS</td><td>₹850</td></tr>
+          <tr><td>14. Pearl Facial AROMA</td><td>₹650</td></tr>
+          <tr><td>15. Anti-aging Facial LOTUS/PLATINUM</td><td>₹950</td></tr>
+          <tr><td>16. Red wine Facial</td><td>₹500</td></tr>
+          <tr><td>17. Anti-Tan Facial VLCC</td><td>₹550</td></tr>
+          <tr><td>18. O3 + Facial Kit</td><td>₹1450</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Waxing -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <span class="icon">🧴</span>
+        <h3>Waxing</h3>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="category-body">
+        <table class="service-table">
+          <tr><td>1. Under Arms (Normal)</td><td>₹60</td></tr>
+          <tr><td>2. Under Arms (Choco)</td><td>₹80</td></tr>
+          <tr><td>3. Under Arms (Rica)</td><td>₹100</td></tr>
+          <tr><td>4. Full Hand-Hot wax</td><td>₹180</td></tr>
+          <tr><td>5. Half Hand-Hot wax</td><td>₹100</td></tr>
+          <tr><td>6. Full Leg-Hot wax</td><td>₹380</td></tr>
+          <tr><td>7. Half Leg-Hot wax</td><td>₹180</td></tr>
+          <tr><td>8. Full Hand-Choco wax</td><td>₹200</td></tr>
+          <tr><td>9. Half Hand-Choco wax</td><td>₹120</td></tr>
+          <tr><td>10. Full Leg-Choco wax</td><td>₹400</td></tr>
+          <tr><td>11. Half Leg-Choco wax</td><td>₹200</td></tr>
+          <tr><td>12. Rica wax-Full Hand</td><td>₹300</td></tr>
+          <tr><td>13. Rica wax-Half Hand</td><td>₹180</td></tr>
+          <tr><td>14. Rica wax-Full Leg</td><td>₹600</td></tr>
+          <tr><td>15. Rica wax-Half Hand</td><td>₹300</td></tr>
+          <tr><td>16. Bikini wax-Hot Wax/Choco</td><td>₹480</td></tr>
+          <tr><td>17. Bikini Wax-Rica wax</td><td>₹600</td></tr>
+          <tr><td>18. Full Body Wax-Hot wax/Choco</td><td>₹830</td></tr>
+          <tr><td>19. Full Body Rica wax</td><td>₹1780</td></tr>
+          <tr><td>20. Back Waxing (Hot Wax/Choco) Shoulder to Middle</td><td>₹130</td></tr>
+          <tr><td>21. Full Back Waxing (Hot Wax/Choco) Shoulder to Waist</td><td>₹280</td></tr>
+          <tr><td>22. Back Waxing (Rica) Shoulder to Middle</td><td>₹180</td></tr>
+          <tr><td>23. Full Back waxing (Rica) shoulder to waist</td><td>₹380</td></tr>
+          <tr><td>24. Full Face wax</td><td>₹130</td></tr>
+          <tr><td>25. Forehead + Upper lips</td><td>₹80</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Hand & Foot Care -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <span class="icon">💅</span>
+        <h3>Hand & Foot Care</h3>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="category-body">
+        <table class="service-table">
+          <tr><td>1. Manicure VLCC/AROMA</td><td>₹200</td></tr>
+          <tr><td>2. Pedicure VLCC/AROMA</td><td>₹400</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Body Care -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <span class="icon">🧖‍♀️</span>
+        <h3>Body Care</h3>
+        <span class="toggle">▼</span>
+      </div>
+      <div class="category-body">
+        <table class="service-table">
+          <tr><td>1. Full Body Spa</td><td>₹1400</td></tr>
+          <tr><td>2. Body Massage with Oil</td><td>₹400</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Book Your Appointment</h2>
+    <p>Home service available in Bagdogra & Airport More area</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <strong>📍 Location</strong>
+        Bagdogra • Airport More
+      </div>
+      <div class="contact-item">
+        <strong>📞 Call / WhatsApp</strong>
+        <a href="tel:6295395734">6295395734</a>
+      </div>
+    </div>
+    <div class="cta-row" style="justify-content:center; gap:1rem; flex-wrap:wrap;">
+      <a href="tel:6295395734" class="btn btn-primary">📞 Call Now</a>
+      <a href="https://wa.me/916295395734?text=Hi%20GlowNest%2C%20I%20want%20to%20book%20a%20beauty%20service" 
+         class="btn" 
+         style="background:#25d366; color:white; box-shadow:0 6px 20px rgba(37,211,102,0.4);"
+         target="_blank">
+        💬 WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>GlowNest Beauty Care</strong> • Quality Service • Hygienic • Affordable Prices • Home-Based Beauty Service</p>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/916295395734?text=Hi%20GlowNest%2C%20I%20want%20to%20book%20a%20beauty%20service" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener"
+     title="Chat on WhatsApp">
+    💬
+  </a>
+
+  <script>
+    function toggleCategory(header) {
+      const category = header.parentElement;
+      category.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
